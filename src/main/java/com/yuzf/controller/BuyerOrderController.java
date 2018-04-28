@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/buyer/order")
+@RequestMapping("sell/buyer/order")
 @Slf4j
 public class BuyerOrderController {
 

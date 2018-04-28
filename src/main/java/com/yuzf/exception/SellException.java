@@ -1,7 +1,9 @@
 package com.yuzf.exception;
 
 import com.yuzf.enums.ResultEnum;
+import lombok.Getter;
 
+@Getter
 public class SellException extends RuntimeException {
 
     private Integer code;
