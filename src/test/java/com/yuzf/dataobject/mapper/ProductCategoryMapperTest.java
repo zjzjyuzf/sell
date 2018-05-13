@@ -78,4 +78,10 @@ public class ProductCategoryMapperTest {
         Assert.assertEquals(1,result);
     }
 
+    @Test
+    public void selectByCategoryType(){
+        ProductCategory result = productCategoryMapper.selectByCategoryType(100);
+        Assert.assertEquals("C罗",result.getCategoryName());
+    }
+
 }

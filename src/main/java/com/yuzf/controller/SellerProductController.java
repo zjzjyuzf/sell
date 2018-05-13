@@ -10,6 +10,9 @@ import com.yuzf.service.ProductService;
 import com.yuzf.utils.KeyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -31,6 +34,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/sell/seller/product")
+//@CacheConfig(cacheNames = "product")
 public class SellerProductController {
 
     @Autowired
@@ -126,6 +130,8 @@ public class SellerProductController {
      * @return
      */
     @PostMapping("/save")
+//    @CachePut(cacheNames = "product" ,key="123")
+    @CacheEvict(cacheNames = "product" ,key="123")//key不填相当于方法的参数
     public ModelAndView save(@Valid ProductForm productForm,
                              BindingResult bindingResult,
                              Map<String,Object> map){
