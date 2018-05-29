@@ -1,6 +1,7 @@
 package com.yuzf.service.impl;
 
 import com.yuzf.dataobject.ProductCategory;
+import com.yuzf.dataobject.dao.ProductCategoryDao;
 import com.yuzf.repository.ProductCategoryRepository;
 import com.yuzf.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
+
 
     @Autowired
     private ProductCategoryRepository productCategoryRepository;
